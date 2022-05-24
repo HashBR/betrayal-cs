@@ -6,7 +6,6 @@ import ResearchRow from "./component/ResearchRow/ResearchRow";
 import TransportationRow from "./component/TransportationRow/TransportationRow";
 
 function App() {
-  console.log("%PUBLIC_URL%");
   return (
     <div className="main-div grid-container">
       <div className="grid-item first">:)</div>

@@ -12,7 +12,9 @@ const HeaderTable = () => {
         <div
           key={member.name}
           className="grid-item member-img"
-          style={{ backgroundImage: `url(${member.img})` }}
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/${member.img})`,
+          }}
         >
           <div className="member-name">{member.name}</div>
         </div>
