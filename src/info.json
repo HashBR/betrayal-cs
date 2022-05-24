@@ -1,0 +1,140 @@
+{
+  "members": [
+    {
+      "name": "Aisling",
+      "img": "images/members/Aisling_Laffrey.webp",
+      "transportation": "Double-Veiled Weapons and Jewellery",
+      "fortification": "Double-Veiled Armor and Jewellery",
+      "research": "Veiled Chaos Orb (T4: Remove 1 random mods, add 1 veiled mod)",
+      "intervention": "Metamorph Scarab"
+    },
+    {
+      "name": "Cameria",
+      "img": "images/members/Cameria_the_Coldblooded.webp",
+      "transportation": "Timeworn Unique",
+      "fortification": "Harbinger Orbs",
+      "research": "Orbs of Unmaking",
+      "intervention": "Sulphite Scarab"
+    },
+    {
+      "name": "Elreon",
+      "img": "images/members/Elreon_Lights_Judge.webp",
+      "transportation": "Unique Weapons",
+      "fortification": "Unique Armours",
+      "research": "Unique Jewellery",
+      "intervention": "Reliquiary Scarab"
+    },
+    {
+      "name": "Gravicius",
+      "img": "images/members/Gravicius_Reborn.webp",
+      "transportation": "Stacks of Divination Cards",
+      "fortification": "Random Divination Cards",
+      "research": "Swap Divination Cards for another random Card",
+      "intervention": "Divination Scarab"
+    },
+    {
+      "name": "Guff \"Tiny\"",
+      "img": "images/members/Guff_Tiny_Grenn.webp",
+      "transportation": "Timed Craft (1Alc, chaos spam, ex...)",
+      "fortification": "Timed Craft (regrets, essences, ex...)",
+      "research": "Timed Craft (1Alc, ex and annul slams...)",
+      "intervention": "Timed Craft (1transmute, alt spam, ex...)"
+    },
+    {
+      "name": "Haku",
+      "img": "images/members/Haku_Warmaster.webp",
+      "transportation": "Rare Items",
+      "fortification": "Magic/Rare/Unique Strongbox",
+      "research": "Rare Items with Quality",
+      "intervention": "Ambush Scarab"
+    },
+    {
+      "name": "Hillock",
+      "img": "images/members/Hillock_the_Blacksmith.webp",
+      "transportation": ">24% Quality Weapons Craft",
+      "fortification": ">24% Quality Armor Craft",
+      "research": ">22% Quality Flask Craft",
+      "intervention": "Abyss Scarab"
+    },
+    {
+      "name": "It That Fled",
+      "img": "images/members/It_That_Fled.webp",
+      "transportation": "Breach Splinters",
+      "fortification": "Breach Enchanted Maps",
+      "research": "Upgrade Breachstone",
+      "intervention": "Breach Scarab"
+    },
+    {
+      "name": "Janus",
+      "img": "images/members/Janus_Perandus.webp",
+      "transportation": "Quality Currency",
+      "fortification": "Currency Shards",
+      "research": "Expedition Currency",
+      "intervention": "Expedition Scarab"
+    },
+    {
+      "name": "Jorgin",
+      "img": "images/members/Thane_Jorgin_the_Banished.webp",
+      "transportation": "Talismans",
+      "fortification": "Aspect Mod Rares",
+      "research": "Corrupt Amulet to Talisman",
+      "intervention": "Bestiary Scarab"
+    },
+    {
+      "name": "Korell",
+      "img": "images/members/Korell_Goya_Son_of_Stone.webp",
+      "transportation": "Essences",
+      "fortification": "Map Fragments",
+      "research": "Fossils",
+      "intervention": "Elder Scarab"
+    },
+    {
+      "name": "Leo",
+      "img": "images/members/Leo_Wolf_of_the_Pits.webp",
+      "transportation": "Catalysts",
+      "fortification": "Random Currency",
+      "research": "Blessed/Divine/Ex Slam",
+      "intervention": "Metamorph Scarab"
+    },
+    {
+      "name": "Riker",
+      "img": "images/members/Riker_Maloney_Midnight_Tinkerer.webp",
+      "transportation": "Timed Take One Currency",
+      "fortification": "Timed Take One Unique",
+      "research": "Timed Take One Veiled Rare",
+      "intervention": "Blighted Scarab"
+    },
+    {
+      "name": "Rin Yushu",
+      "img": "images/members/Rin_Yuushu.webp",
+      "transportation": "Normal Maps",
+      "fortification": "Rare maps",
+      "research": "Unique Maps",
+      "intervention": "Cartography Scarab"
+    },
+    {
+      "name": "Tora",
+      "img": "images/members/Tora_the_Culler.webp",
+      "transportation": "Timed Take One Item",
+      "fortification": "Lab Enchanted Gloves/Boots/Helmets",
+      "research": "20/70/200M exp to a Gem",
+      "intervention": "Harbinger Scarab"
+    },
+    {
+      "name": "Vagan",
+      "img": "images/members/Vagan_Victorys_Herald.webp",
+      "transportation": "Legion Splinters",
+      "fortification": "Legion Chests",
+      "research": "Incubators",
+      "intervention": "Legion Scarab"
+    },
+    {
+      "name": "Vorici",
+      "img": "images/members/Vorici_Silent_Brother.webp",
+      "transportation": "Random Quality Gems",
+      "fortification": "Socket Currency",
+      "research": "Craft White Sockets",
+      "intervention": "Shaper Scarab"
+    }
+  ]
+}

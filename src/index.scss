@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Fontin";
+  src: local("Fontin"),
+    url(./assets/fonts/Fontin-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Fontin";
+  font-weight: 900;
+  src: local("Fontin"), url(./assets/fonts/Fontin-Bold.ttf) format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Fontin", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
