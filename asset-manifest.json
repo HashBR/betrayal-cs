@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/betrayal-cs/static/css/main.073c9b0a.css",
-    "main.js": "/betrayal-cs/static/js/main.151cc59e.js",
-    "static/js/787.e31c53a4.chunk.js": "/betrayal-cs/static/js/787.e31c53a4.chunk.js",
-    "static/media/logo.svg": "/betrayal-cs/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/betrayal-cs/static/css/main.62d1146b.css",
+    "main.js": "/betrayal-cs/static/js/main.cc918fec.js",
+    "static/media/Fontin-Regular.ttf": "/betrayal-cs/static/media/Fontin-Regular.5f8c6f67bdf10c7a3787.ttf",
+    "static/media/Fontin-Bold.ttf": "/betrayal-cs/static/media/Fontin-Bold.759f61605323d574caed.ttf",
     "index.html": "/betrayal-cs/index.html",
-    "main.073c9b0a.css.map": "/betrayal-cs/static/css/main.073c9b0a.css.map",
-    "main.151cc59e.js.map": "/betrayal-cs/static/js/main.151cc59e.js.map",
-    "787.e31c53a4.chunk.js.map": "/betrayal-cs/static/js/787.e31c53a4.chunk.js.map"
+    "main.62d1146b.css.map": "/betrayal-cs/static/css/main.62d1146b.css.map",
+    "main.cc918fec.js.map": "/betrayal-cs/static/js/main.cc918fec.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.151cc59e.js"
+    "static/css/main.62d1146b.css",
+    "static/js/main.cc918fec.js"
   ]
 }
