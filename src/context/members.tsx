@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { ISyndicate } from "../interfaces/ISyndicate";
 import { SyndicateProps } from "../interfaces/SyndicateProps";
 import SYNDICATE from "../info.json";
