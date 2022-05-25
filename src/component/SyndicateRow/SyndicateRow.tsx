@@ -21,7 +21,7 @@ const SyndicateRow = ({
     if (found) {
       found.count = IncrementOnPosition(found.count, rowIndex);
     }
-    setCounters((previousCounter: any) => {
+    setCounters((previousCounter) => {
       return [...previousCounter];
     });
   };
@@ -31,13 +31,13 @@ const SyndicateRow = ({
       <div className="grid-item first">
         <span className="area-title">{letter}</span>
         <div className="circle-wrapper">
-          {rowIndex === 1 && <FontAwesomeIcon icon={faCircle} />}
+          {rowIndex === 3 && <FontAwesomeIcon icon={faCircle} />}
           <FontAwesomeIcon icon={faCircleEmpty} />
           {rowIndex === 2 && <FontAwesomeIcon icon={faCircle} />}
           <FontAwesomeIcon icon={faCircleEmpty} />
-          {rowIndex === 3 && <FontAwesomeIcon icon={faCircle} />}
+          {rowIndex === 1 && <FontAwesomeIcon icon={faCircle} />}
           <FontAwesomeIcon icon={faCircleEmpty} />
-          {rowIndex === 4 && <FontAwesomeIcon icon={faCircle} />}
+          {rowIndex === 0 && <FontAwesomeIcon icon={faCircle} />}
         </div>
       </div>
       {members.map((member, index) => (
