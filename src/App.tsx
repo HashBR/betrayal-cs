@@ -1,19 +1,32 @@
 import "./App.scss";
-import FortificationRow from "./component/FortificationRow/FortificationRow";
+import SyndicateRow from "./component/SyndicateRow/SyndicateRow";
 import HeaderTable from "./component/HeaderTable/HeaderTable";
-import InterventionRow from "./component/InterventionRow/InterventionRow";
-import ResearchRow from "./component/ResearchRow/ResearchRow";
-import TransportationRow from "./component/TransportationRow/TransportationRow";
 
 function App() {
   return (
     <div className="main-div grid-container">
       <div className="grid-item first">:)</div>
       <HeaderTable></HeaderTable>
-      <TransportationRow></TransportationRow>
-      <FortificationRow></FortificationRow>
-      <ResearchRow></ResearchRow>
-      <InterventionRow></InterventionRow>
+      <SyndicateRow
+        rowIndex={3}
+        letter={"T"}
+        areaName={"transportation"}
+      ></SyndicateRow>
+      <SyndicateRow
+        rowIndex={2}
+        letter={"F"}
+        areaName={"fortification"}
+      ></SyndicateRow>
+      <SyndicateRow
+        rowIndex={1}
+        letter={"R"}
+        areaName={"research"}
+      ></SyndicateRow>
+      <SyndicateRow
+        rowIndex={0}
+        letter={"I"}
+        areaName={"intervention"}
+      ></SyndicateRow>
     </div>
   );
 }
