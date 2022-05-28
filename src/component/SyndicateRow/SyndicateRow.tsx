@@ -14,7 +14,7 @@ const SyndicateRow = ({
   areaName = "transportation",
 }) => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters } =
+  const { counters, setCounters, setShareCode } =
     useContext<CountersContextProps>(CountersContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
@@ -24,6 +24,13 @@ const SyndicateRow = ({
     setCounters((previousCounter) => {
       return [...previousCounter];
     });
+    setShareCode(
+      counters
+        .map((counter) => {
+          return String(counter.count).padStart(5, "0");
+        })
+        .join("")
+    );
   };
 
   return (

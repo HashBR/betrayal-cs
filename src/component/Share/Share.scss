@@ -1,0 +1,99 @@
+.share-btn {
+  border-radius: 5px;
+  border: 1px solid rgba(196, 154, 124, 0.3);
+  padding: 4px;
+  color: rgb(11, 94, 172);
+  -webkit-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
+  -moz-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
+  box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
+  text-align: center;
+  font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+  text-shadow: 0px 0px 50px rgba(255, 210, 171, 0.5);
+  width: 200px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+.share-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-code {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+}
+.button-text {
+  font-family: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 4px;
+  background: url("https://web.poecdn.com/protected/image/custom-leagues/button.png?key=9k5SPmctR7m2JXCUMEzCAw")
+    #266513 repeat-x;
+  border: 0px none;
+  color: #a9d287;
+  transition-duration: 200ms;
+  margin: 2px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  background: url("https://web.poecdn.com/protected/image/layout/button/button-green-normal-left.png?key=m3tNDoK8ssfe-uwkfY5i-g")
+      no-repeat top left,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-normal-right.png?key=9HiVunkPjrKoL46Cjy20lg")
+      top right no-repeat,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-normal-middle.png?key=u12JHEvRrBGlgZ8wx6Cy8A")
+      top repeat-x,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-left.png?key=YWYm2nAWV9sQLR4Jlns8cg") -100px -100px
+      no-repeat,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-right.png?key=Zw_WgC8uFz4MKbK_1TWCGA") -100px -100px
+      no-repeat,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-middle.png?key=FPPFdUoVfTlr53LDdTqt1Q") -100px -100px
+      no-repeat,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-left.png?key=0Z9PP2deN4qhSjHSbwi4Fg") -100px -100px
+      no-repeat,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-right.png?key=VW43Vik8QhA6WaZrN_cN-Q") -100px -100px
+      no-repeat,
+    url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-middle.png?key=0WNzDCJ_urqkPNuJTmK9nA") -100px -100px
+      no-repeat;
+  background-size: contain;
+  padding: 10px 20px;
+  &:hover {
+    cursor: pointer;
+
+    background: url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-left.png?key=YWYm2nAWV9sQLR4Jlns8cg")
+        no-repeat top left,
+      url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-right.png?key=Zw_WgC8uFz4MKbK_1TWCGA")
+        top right no-repeat,
+      url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-middle.png?key=FPPFdUoVfTlr53LDdTqt1Q")
+        top repeat-x;
+    background-size: contain;
+    color: #a3e89b;
+  }
+  &:active {
+    background: url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-left.png?key=0Z9PP2deN4qhSjHSbwi4Fg")
+        no-repeat top left,
+      url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-right.png?key=VW43Vik8QhA6WaZrN_cN-Q")
+        top right no-repeat,
+      url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-middle.png?key=0WNzDCJ_urqkPNuJTmK9nA")
+        top repeat-x;
+    background-size: contain;
+    color: #35583b;
+  }
+}
+
+.Toastify__toast--default {
+  font-family: "Fontin";
+  font-weight: 900;
+  font-size: 1.5rem;
+  background-color: rgb(19, 19, 19);
+  -webkit-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
+  -moz-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
+  box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
+  color: rgb(226, 213, 206);
+  border: 1px solid rgba(196, 154, 124, 0.3);
+  border-radius: 0px;
+  text-align: center;
+}

@@ -20,7 +20,6 @@ const IncrementOnPosition = (
     );
   }
   const result = parseInt(newNumberString.join(""));
-  // console.log(result);
   return result;
 };
 
