@@ -18,6 +18,7 @@ const Share = () => {
         return { ...counter, count: 0 };
       });
     });
+    toast("Cleared!");
   };
 
   const handleShare = async () => {
