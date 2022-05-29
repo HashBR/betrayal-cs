@@ -2,6 +2,7 @@ import "./App.scss";
 import SyndicateRow from "./component/SyndicateRow/SyndicateRow";
 import HeaderTable from "./component/HeaderTable/HeaderTable";
 import Share from "./component/Share/Share";
+import ShareCodeDecoder from "./utils/ShareCodeDecoder";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       </div>
       <div className="menu">
         <Share></Share>
+        <button onClick={() => ShareCodeDecoder()}>Teste do share</button>
       </div>
     </div>
   );

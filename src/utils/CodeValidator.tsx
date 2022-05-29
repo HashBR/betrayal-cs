@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { SyndicateContext } from "../context/members";
 import { ISyndicate } from "../interfaces/ISyndicate";
+import ShareCodeDecoder from "./ShareCodeDecoder";
 
 const CodeValidator = (fullPathname: string) => {
   function zeroToThree(string: string) {
@@ -8,11 +9,13 @@ const CodeValidator = (fullPathname: string) => {
   }
   const { members } = useContext<ISyndicate>(SyndicateContext);
   const blankCode = "00000".repeat(members.length);
-  // get the share code from the url
+
   try {
     const splitCode = fullPathname.split("?")[1].split("=")[1];
-    if (splitCode && splitCode.length === 85 && zeroToThree(splitCode)) {
-      return splitCode;
+    const decodedCode = ShareCodeDecoder(splitCode);
+
+    if (decodedCode && decodedCode.length === 85 && zeroToThree(decodedCode)) {
+      return decodedCode;
     }
     return blankCode;
   } catch (error) {

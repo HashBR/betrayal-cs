@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CountersContext } from "../../context/counters";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
+import ShareCodeCreator from "../../utils/ShareCodeCreator";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,14 +18,14 @@ const Share = () => {
       .join("");
     setShareCode(newCode);
     await navigator.clipboard.writeText(
-      `${window.location.origin}/betrayal-cs?code=${newCode}`
+      `${window.location.origin}/betrayal-cs?code=${ShareCodeCreator(newCode)}`
     );
     toast("Copied to Clipboard!");
   };
 
-  useEffect(() => {
-    console.log(shareCode);
-  }, [shareCode]);
+  // useEffect(() => {
+  //   console.log(shareCode);
+  // }, [shareCode]);
   return (
     <div className="share-area">
       <ToastContainer
