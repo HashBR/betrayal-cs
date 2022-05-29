@@ -2,13 +2,13 @@ import "./App.scss";
 import SyndicateRow from "./component/SyndicateRow/SyndicateRow";
 import HeaderTable from "./component/HeaderTable/HeaderTable";
 import Share from "./component/Share/Share";
-import ShareCodeDecoder from "./utils/ShareCodeDecoder";
+import InfoCell from "./component/InfoCell/InfoCell";
 
 function App() {
   return (
     <div className="main-div">
       <div className="grid-container">
-        <div className="grid-item first">:)</div>
+        <InfoCell></InfoCell>
         <HeaderTable></HeaderTable>
         <SyndicateRow
           rowIndex={3}
@@ -33,7 +33,6 @@ function App() {
       </div>
       <div className="menu">
         <Share></Share>
-        <button onClick={() => ShareCodeDecoder()}>Teste do share</button>
       </div>
     </div>
   );

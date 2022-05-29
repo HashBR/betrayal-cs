@@ -44,9 +44,10 @@ const Share = () => {
       <button className="button-text" onClick={() => handleShare()}>
         Copy to Clipboard
       </button>
-      {/* <span className="share-code">
-        {window.location.origin}/betrayal-cs?code={shareCode}
-      </span> */}
+      <span className="share-info">
+        This will copy the share url to your clipboard. Anybody opening that
+        link will see the same Cheat Sheet as you.
+      </span>
     </div>
   );
 };

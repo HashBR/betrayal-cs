@@ -16,14 +16,16 @@
 
 .share-area {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
 
-.share-code {
-  color: rgb(255, 255, 255);
+.share-info {
+  color: rgb(255, 210, 171);
   font-size: 1rem;
+  margin-left: 5px;
 }
 .button-text {
   font-family: inherit;

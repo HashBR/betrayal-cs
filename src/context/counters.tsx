@@ -7,6 +7,8 @@ import { CountersContextProps } from "../interfaces/CountersContextProps";
 import ShareCodeSplitter from "../utils/ShareCodeSplitter";
 import CodeValidator from "../utils/CodeValidator";
 
+const LOCAL_STORAGE_KEY = "betrayalcs.counters";
+
 export const CountersContext = createContext<CountersContextProps>({
   counters: [],
   setCounters: () => {},
@@ -21,19 +23,30 @@ export const CountersProvider = (props: CountersProps) => {
   const [shareCode, setShareCode] = useState<string>(
     CodeValidator(window.location.href)
   );
+
   useEffect(() => {
-    members.forEach((member, columnIndex) => {
-      const loadedCounter = ShareCodeSplitter(shareCode, columnIndex);
-      if (loadedCounter != null && loadedCounter !== undefined) {
-        setCounters((previousCounters) => {
-          return [
-            ...previousCounters,
-            { field: member.name, count: loadedCounter },
-          ];
-        });
-      }
-    });
+    const storedCounters = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
+    if (storedCounters) {
+      setCounters(storedCounters);
+    } else {
+      members.forEach((member, columnIndex) => {
+        const loadedCounter = ShareCodeSplitter(shareCode, columnIndex);
+        if (loadedCounter != null && loadedCounter !== undefined) {
+          setCounters((previousCounters) => {
+            return [
+              ...previousCounters,
+              { field: member.name, count: loadedCounter },
+            ];
+          });
+        }
+      });
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(counters));
+  }, [counters]);
+
   const value = { counters, setCounters, shareCode, setShareCode };
   return (
     <CountersContext.Provider value={value}>
