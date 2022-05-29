@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { ISyndicate } from "../interfaces/ISyndicate";
 import { SyndicateProps } from "../interfaces/SyndicateProps";
 import SYNDICATE from "../info.json";
@@ -8,7 +8,7 @@ export const SyndicateContext = createContext<ISyndicate>({
 });
 
 export const SyndicateProvider = (props: SyndicateProps) => {
-  const [syndicate, setSyndicate] = useState<ISyndicate>(SYNDICATE);
+  const [syndicate] = useState<ISyndicate>(SYNDICATE);
   return (
     <SyndicateContext.Provider value={syndicate}>
       {props.children}

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CountersContext } from "../../context/counters";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
 import ShareCodeCreator from "../../utils/ShareCodeCreator";
@@ -6,10 +6,20 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./Share.scss";
+import Button from "../Button/Button";
 
 const Share = () => {
-  const { counters, shareCode, setShareCode } =
+  const { counters, setCounters, setShareCode } =
     useContext<CountersContextProps>(CountersContext);
+
+  const resetCounters = () => {
+    setCounters((previousCounters) => {
+      return previousCounters.map((counter) => {
+        return { ...counter, count: 0 };
+      });
+    });
+  };
+
   const handleShare = async () => {
     const newCode = counters
       .map((counter) => {
@@ -41,13 +51,19 @@ const Share = () => {
         limit={1}
         closeButton={false}
       />
-      <button className="button-text" onClick={() => handleShare()}>
-        Copy to Clipboard
-      </button>
-      <span className="share-info">
-        This will copy the share url to your clipboard. Anybody opening that
-        link will see the same Cheat Sheet as you.
-      </span>
+      <div className="share-container">
+        <Button textValue="Copy to Clipboard" onClick={() => handleShare()} />
+        <span className="share-info">
+          This will copy the share url to your clipboard. Anybody opening that
+          link will see the same Cheat Sheet as you.
+        </span>
+      </div>
+      <div className="clear-container">
+        <Button textValue="Clear Cheat Sheet" onClick={() => resetCounters()} />
+        <span className="share-info">
+          This will clear your Betrayal Cheat Sheet.
+        </span>
+      </div>
     </div>
   );
 };
