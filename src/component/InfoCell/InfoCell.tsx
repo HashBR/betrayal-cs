@@ -9,7 +9,7 @@ const InfoCell = () => {
         src="https://web.poecdn.com/protected/image/layout/sentinellogo.png?key=gRYQQgc-tgNPZeE4SNPCdQ"
       />
       <span className="info-text">Betrayal Cheat Sheet</span>
-      <span className="info-text">Options below</span>
+      <span className="info-text">v0.9</span>
     </div>
   );
 };

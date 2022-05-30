@@ -50,12 +50,20 @@ const SyndicateRow = ({
       {members.map((member, index) => (
         <div
           key={member.name}
-          className={`grid-item clickable color${
+          className={`grid-item clickable item-img color${
             counters[index]
               ? String(counters[index].count).padStart(5, "0")[rowIndex]
               : "0"
           }`}
           onClick={() => handleCounter(member.name)}
+          // style only if areaName is transportation
+          style={
+            areaName === "transportation"
+              ? {
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/${member.transportationImg})`,
+                }
+              : {}
+          }
         >
           {areaName === "transportation" && (
             <div className="">{member.transportation}</div>
