@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/betrayal-cs/static/css/main.ae2a3314.css",
-    "main.js": "/betrayal-cs/static/js/main.7081070b.js",
+    "main.css": "/betrayal-cs/static/css/main.f25abccc.css",
+    "main.js": "/betrayal-cs/static/js/main.be26dfc5.js",
     "static/media/Fontin-Regular.ttf": "/betrayal-cs/static/media/Fontin-Regular.5f8c6f67bdf10c7a3787.ttf",
     "static/media/Fontin-Bold.ttf": "/betrayal-cs/static/media/Fontin-Bold.759f61605323d574caed.ttf",
     "index.html": "/betrayal-cs/index.html",
-    "main.ae2a3314.css.map": "/betrayal-cs/static/css/main.ae2a3314.css.map",
-    "main.7081070b.js.map": "/betrayal-cs/static/js/main.7081070b.js.map"
+    "main.f25abccc.css.map": "/betrayal-cs/static/css/main.f25abccc.css.map",
+    "main.be26dfc5.js.map": "/betrayal-cs/static/js/main.be26dfc5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae2a3314.css",
-    "static/js/main.7081070b.js"
+    "static/css/main.f25abccc.css",
+    "static/js/main.be26dfc5.js"
   ]
 }
