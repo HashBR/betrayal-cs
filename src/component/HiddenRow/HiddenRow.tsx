@@ -56,7 +56,7 @@ const HiddenRow = () => {
                   marginRight: "0.4rem",
                 }}
               />
-              {`${member.name}`}
+              <span className="checkbox-text">{`${member.name}`}</span>
             </label>
           </div>
         );

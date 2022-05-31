@@ -8,7 +8,7 @@
       "fortification": "Double-Veiled Armor and Jewellery",
       "fortificationImg": "images/fortification/aisling-f.webp",
       "research": "Veiled Chaos Orb (T4: Remove 1 random mods, add 1 veiled mod)",
-      "researchImg": "",
+      "researchImg": "images/research/aisling-r.webp",
       "intervention": "Torment Scarab",
       "interventionImg": "images/intervention/aisling-i.webp"
     },
@@ -20,7 +20,7 @@
       "fortification": "Harbinger Orbs",
       "fortificationImg": "images/fortification/cameria-f.webp",
       "research": "Orbs of Unmaking",
-      "researchImg": "",
+      "researchImg": "images/research/cameria-r.webp",
       "intervention": "Sulphite Scarab",
       "interventionImg": "images/intervention/cameria-i.webp"
     },
@@ -32,7 +32,7 @@
       "fortification": "Unique Armours",
       "fortificationImg": "images/fortification/elreon-f.webp",
       "research": "Unique Jewellery",
-      "researchImg": "",
+      "researchImg": "images/research/elreon-r.webp",
       "intervention": "Reliquiary Scarab",
       "interventionImg": "images/intervention/elreon-i.webp"
     },
@@ -44,7 +44,7 @@
       "fortification": "Random Divination Cards",
       "fortificationImg": "images/fortification/gravicius-f.webp",
       "research": "Swap Divination Cards for another random Card",
-      "researchImg": "",
+      "researchImg": "images/research/gravicius-r.webp",
       "intervention": "Divination Scarab",
       "interventionImg": "images/intervention/gravicius-i.webp"
     },
@@ -56,7 +56,7 @@
       "fortification": "Timed Craft (scouring, essences, ex...)",
       "fortificationImg": "images/fortification/guff-f.webp",
       "research": "Timed Craft (1Alc, ex and annul slams...)",
-      "researchImg": "",
+      "researchImg": "images/research/guff-r.webp",
       "intervention": "Timed Craft (1transmute, alt spam, ex...",
       "interventionImg": "images/intervention/guff-i.webp"
     },
@@ -68,7 +68,7 @@
       "fortification": "Magic/Rare/Unique Strongbox",
       "fortificationImg": "images/fortification/haku-f.webp",
       "research": "Rare Items with Quality",
-      "researchImg": "",
+      "researchImg": "images/research/haku-r.webp",
       "intervention": "Ambush Scarab",
       "interventionImg": "images/intervention/haku-i.webp"
     },
@@ -80,7 +80,7 @@
       "fortification": ">24% Quality Armor Craft",
       "fortificationImg": "images/fortification/hillock-f.webp",
       "research": ">22% Quality Flask Craft",
-      "researchImg": "",
+      "researchImg": "images/research/hillock-r.webp",
       "intervention": "Abyss Scarab",
       "interventionImg": "images/intervention/hillock-i.webp"
     },
@@ -92,7 +92,7 @@
       "fortification": "Breach Enchanted Maps",
       "fortificationImg": "images/fortification/it-that-fled-f.webp",
       "research": "Upgrade Breachstone",
-      "researchImg": "",
+      "researchImg": "images/research/it-that-fled-r.webp",
       "intervention": "Breach Scarab",
       "interventionImg": "images/intervention/it-that-fled-i.webp"
     },
@@ -104,7 +104,7 @@
       "fortification": "Currency Shards",
       "fortificationImg": "images/fortification/janus-f.webp",
       "research": "Expedition Currency",
-      "researchImg": "",
+      "researchImg": "images/research/janus-r.webp",
       "intervention": "Expedition Scarab",
       "interventionImg": "images/intervention/janus-i.webp"
     },
@@ -116,7 +116,7 @@
       "fortification": "Aspect Mod Rares",
       "fortificationImg": "images/fortification/jorgin-f.webp",
       "research": "Corrupt Amulet to Talisman",
-      "researchImg": "",
+      "researchImg": "images/research/jorgin-r.webp",
       "intervention": "Bestiary Scarab",
       "interventionImg": "images/intervention/jorgin-i.webp"
     },
@@ -128,7 +128,7 @@
       "fortification": "Map Fragments",
       "fortificationImg": "images/fortification/korell-f.webp",
       "research": "Fossils",
-      "researchImg": "",
+      "researchImg": "images/research/korell-r.webp",
       "intervention": "Elder Scarab",
       "interventionImg": "images/intervention/korell-i.webp"
     },
@@ -140,7 +140,7 @@
       "fortification": "Random Currency",
       "fortificationImg": "images/fortification/leo-f.webp",
       "research": "Blessed / Divine / Ex Slam",
-      "researchImg": "",
+      "researchImg": "images/research/leo-r.webp",
       "intervention": "Metamorph Scarab",
       "interventionImg": "images/intervention/leo-i.webp"
     },
@@ -148,11 +148,11 @@
       "name": "Riker",
       "img": "images/members/Riker_Maloney_Midnight_Tinkerer.webp",
       "transportation": "Timed Take One Currency",
-      "transportationImg": "images/transportation/riker-t.svg",
+      "transportationImg": "images/transportation/riker-t.webp",
       "fortification": "Timed Take One Unique",
       "fortificationImg": "images/fortification/riker-f.webp",
       "research": "Timed Take One Veiled Rare",
-      "researchImg": "",
+      "researchImg": "images/research/riker-r.webp",
       "intervention": "Blighted Scarab",
       "interventionImg": "images/intervention/riker-i.webp"
     },
@@ -164,7 +164,7 @@
       "fortification": "Rare maps",
       "fortificationImg": "images/fortification/rin-yushu-f.webp",
       "research": "Unique Maps",
-      "researchImg": "",
+      "researchImg": "images/research/rin-yushu-r.webp",
       "intervention": "Cartography Scarab",
       "interventionImg": "images/intervention/rin-yushu-i.webp"
     },
@@ -176,7 +176,7 @@
       "fortification": "Lab Enchanted Gloves/Boots/Helmets",
       "fortificationImg": "images/fortification/tora-f.webp",
       "research": "20/70/200M exp to a Gem",
-      "researchImg": "",
+      "researchImg": "images/research/tora-r.webp",
       "intervention": "Harbinger Scarab",
       "interventionImg": "images/intervention/tora-i.webp"
     },
@@ -188,7 +188,7 @@
       "fortification": "Legion Chests",
       "fortificationImg": "images/fortification/vagan-f.webp",
       "research": "Incubators",
-      "researchImg": "",
+      "researchImg": "images/research/vagan-r.webp",
       "intervention": "Legion Scarab",
       "interventionImg": "images/intervention/vagan-i.webp"
     },
@@ -200,7 +200,7 @@
       "fortification": "Socket Currency",
       "fortificationImg": "images/fortification/vorici-f.webp",
       "research": "Craft White Sockets",
-      "researchImg": "",
+      "researchImg": "images/research/vorici-r.webp",
       "intervention": "Shaper Scarab",
       "interventionImg": "images/intervention/vorici-i.webp"
     }
