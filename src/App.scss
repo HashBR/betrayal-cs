@@ -10,8 +10,8 @@ $item-padding: 4px;
   display: grid;
   width: 100%;
   height: 100vh;
-  grid-template-columns: 90px repeat(17, $item-width);
-  grid-template-rows: 90px repeat(4, $item-height);
+  // grid-template-columns: 90px repeat(17, 1fr);
+  grid-template-rows: 90px repeat(4, 1fr);
   justify-items: center;
 }
 
@@ -87,10 +87,11 @@ $item-padding: 4px;
 
 .menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 5px;
+  padding-top: 10px;
+  gap: 10px;
   width: 100%;
   height: 100%;
 }

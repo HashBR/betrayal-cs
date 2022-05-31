@@ -53,14 +53,22 @@ const Share = () => {
         closeButton={false}
       />
       <div className="share-container">
-        <Button textValue="Copy to Clipboard" onClick={() => handleShare()} />
+        <Button onClick={() => handleShare()} width="250px" fontSize="1.25rem">
+          Copy to Clipboard
+        </Button>
         <span className="share-info">
           This will copy the share url to your clipboard. Anybody opening that
           link will see the same Cheat Sheet as you.
         </span>
       </div>
       <div className="clear-container">
-        <Button textValue="Clear Cheat Sheet" onClick={() => resetCounters()} />
+        <Button
+          onClick={() => resetCounters()}
+          width="250px"
+          fontSize="1.25rem"
+        >
+          Clear Cheat Sheet
+        </Button>
         <span className="share-info">
           This will clear your Betrayal Cheat Sheet.
         </span>

@@ -26,7 +26,6 @@ export const CountersProvider = (props: CountersProps) => {
 
   useEffect(() => {
     const storedCounters = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
-    console.log(storedCounters, shareCode);
     if (storedCounters && shareCode === "00000".repeat(members.length)) {
       setCounters(storedCounters);
     } else {
@@ -36,7 +35,7 @@ export const CountersProvider = (props: CountersProps) => {
           setCounters((previousCounters) => {
             return [
               ...previousCounters,
-              { field: member.name, count: loadedCounter },
+              { field: member.name, count: loadedCounter, hidden: false },
             ];
           });
         }

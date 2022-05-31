@@ -69,6 +69,8 @@ const SyndicateRow = ({
                 ? member.interventionImg
                 : ""
             })`,
+            // display is none if hidden is true
+            display: counters[index]?.hidden ? "none" : "flex",
           }}
         >
           {areaName === "transportation" && (

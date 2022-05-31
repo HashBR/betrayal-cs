@@ -33,6 +33,7 @@ const HeaderTable = () => {
           }`}
           style={{
             backgroundImage: `url(${process.env.PUBLIC_URL}/${member.img})`,
+            display: counters[index]?.hidden ? "none" : "flex",
           }}
           onClick={() => handleCounter(member.name)}
         >
