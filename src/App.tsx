@@ -33,13 +33,6 @@ function App() {
       </div>
       <div className="menu">
         <Share></Share>
-        <img
-          src={
-            window.location.origin +
-            "/betrayal-cs/images/transportation/aisling-t.svg"
-          }
-          alt="Aisling Transporataion"
-        />
       </div>
     </div>
   );

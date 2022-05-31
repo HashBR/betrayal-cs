@@ -56,14 +56,20 @@ const SyndicateRow = ({
               : "0"
           }`}
           onClick={() => handleCounter(member.name)}
-          // style only if areaName is transportation
-          style={
-            areaName === "transportation"
-              ? {
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/${member.transportationImg})`,
-                }
-              : {}
-          }
+          // backgroundImage diferent based on areaName
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/${
+              areaName === "transportation"
+                ? member.transportationImg
+                : areaName === "fortification"
+                ? member.fortificationImg
+                : areaName === "research"
+                ? member.researchImg
+                : areaName === "intervention"
+                ? member.interventionImg
+                : ""
+            })`,
+          }}
         >
           {areaName === "transportation" && (
             <div className="">{member.transportation}</div>

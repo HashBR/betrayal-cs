@@ -6,8 +6,11 @@
       "transportation": "Double-Veiled Weapons and Jewellery",
       "transportationImg": "images/transportation/aisling-t.svg",
       "fortification": "Double-Veiled Armor and Jewellery",
+      "fortificationImg": "images/fortification/aisling-f.webp",
       "research": "Veiled Chaos Orb (T4: Remove 1 random mods, add 1 veiled mod)",
-      "intervention": "Metamorph Scarab"
+      "researchImg": "",
+      "intervention": "Torment Scarab",
+      "interventionImg": "images/intervention/aisling-i.webp"
     },
     {
       "name": "Cameria",
@@ -15,8 +18,11 @@
       "transportation": "Timeworn Unique",
       "transportationImg": "images/transportation/cameria-t.svg",
       "fortification": "Harbinger Orbs",
+      "fortificationImg": "images/fortification/cameria-f.webp",
       "research": "Orbs of Unmaking",
-      "intervention": "Sulphite Scarab"
+      "researchImg": "",
+      "intervention": "Sulphite Scarab",
+      "interventionImg": "images/intervention/cameria-i.webp"
     },
     {
       "name": "Elreon",
@@ -24,8 +30,11 @@
       "transportation": "Unique Weapons",
       "transportationImg": "images/transportation/elreon-t.svg",
       "fortification": "Unique Armours",
+      "fortificationImg": "images/fortification/elreon-f.webp",
       "research": "Unique Jewellery",
-      "intervention": "Reliquiary Scarab"
+      "researchImg": "",
+      "intervention": "Reliquiary Scarab",
+      "interventionImg": "images/intervention/elreon-i.webp"
     },
     {
       "name": "Gravicius",
@@ -33,17 +42,23 @@
       "transportation": "Stacks of Divination Cards",
       "transportationImg": "images/transportation/gravicius-t.svg",
       "fortification": "Random Divination Cards",
+      "fortificationImg": "images/fortification/gravicius-f.webp",
       "research": "Swap Divination Cards for another random Card",
-      "intervention": "Divination Scarab"
+      "researchImg": "",
+      "intervention": "Divination Scarab",
+      "interventionImg": "images/intervention/gravicius-i.webp"
     },
     {
       "name": "Guff \"Tiny\"",
       "img": "images/members/Guff_Tiny_Grenn.webp",
       "transportation": "Timed Craft (1Alc, chaos spam, ex...)",
       "transportationImg": "images/transportation/guff-t.svg",
-      "fortification": "Timed Craft (regrets, essences, ex...)",
+      "fortification": "Timed Craft (scouring, essences, ex...)",
+      "fortificationImg": "images/fortification/guff-f.webp",
       "research": "Timed Craft (1Alc, ex and annul slams...)",
-      "intervention": "Timed Craft (1transmute, alt spam, ex...)"
+      "researchImg": "",
+      "intervention": "Timed Craft (1transmute, alt spam, ex...",
+      "interventionImg": "images/intervention/guff-i.webp"
     },
     {
       "name": "Haku",
@@ -51,8 +66,11 @@
       "transportation": "Rare Items",
       "transportationImg": "images/transportation/haku-t.svg",
       "fortification": "Magic/Rare/Unique Strongbox",
+      "fortificationImg": "images/fortification/haku-f.webp",
       "research": "Rare Items with Quality",
-      "intervention": "Ambush Scarab"
+      "researchImg": "",
+      "intervention": "Ambush Scarab",
+      "interventionImg": "images/intervention/haku-i.webp"
     },
     {
       "name": "Hillock",
@@ -60,8 +78,11 @@
       "transportation": ">24% Quality Weapons Craft",
       "transportationImg": "images/transportation/hillock-t.svg",
       "fortification": ">24% Quality Armor Craft",
+      "fortificationImg": "images/fortification/hillock-f.webp",
       "research": ">22% Quality Flask Craft",
-      "intervention": "Abyss Scarab"
+      "researchImg": "",
+      "intervention": "Abyss Scarab",
+      "interventionImg": "images/intervention/hillock-i.webp"
     },
     {
       "name": "It That Fled",
@@ -69,8 +90,11 @@
       "transportation": "Breach Splinters",
       "transportationImg": "images/transportation/it-that-fled-t.svg",
       "fortification": "Breach Enchanted Maps",
+      "fortificationImg": "images/fortification/it-that-fled-f.webp",
       "research": "Upgrade Breachstone",
-      "intervention": "Breach Scarab"
+      "researchImg": "",
+      "intervention": "Breach Scarab",
+      "interventionImg": "images/intervention/it-that-fled-i.webp"
     },
     {
       "name": "Janus",
@@ -78,8 +102,11 @@
       "transportation": "Quality Currency",
       "transportationImg": "images/transportation/janus-t.svg",
       "fortification": "Currency Shards",
+      "fortificationImg": "images/fortification/janus-f.webp",
       "research": "Expedition Currency",
-      "intervention": "Expedition Scarab"
+      "researchImg": "",
+      "intervention": "Expedition Scarab",
+      "interventionImg": "images/intervention/janus-i.webp"
     },
     {
       "name": "Jorgin",
@@ -87,8 +114,11 @@
       "transportation": "Talismans",
       "transportationImg": "images/transportation/jorgin-t.svg",
       "fortification": "Aspect Mod Rares",
+      "fortificationImg": "images/fortification/jorgin-f.webp",
       "research": "Corrupt Amulet to Talisman",
-      "intervention": "Bestiary Scarab"
+      "researchImg": "",
+      "intervention": "Bestiary Scarab",
+      "interventionImg": "images/intervention/jorgin-i.webp"
     },
     {
       "name": "Korell",
@@ -96,8 +126,11 @@
       "transportation": "Essences",
       "transportationImg": "images/transportation/korell-t.svg",
       "fortification": "Map Fragments",
+      "fortificationImg": "images/fortification/korell-f.webp",
       "research": "Fossils",
-      "intervention": "Elder Scarab"
+      "researchImg": "",
+      "intervention": "Elder Scarab",
+      "interventionImg": "images/intervention/korell-i.webp"
     },
     {
       "name": "Leo",
@@ -105,8 +138,11 @@
       "transportation": "Catalysts",
       "transportationImg": "images/transportation/leo-t.svg",
       "fortification": "Random Currency",
+      "fortificationImg": "images/fortification/leo-f.webp",
       "research": "Blessed / Divine / Ex Slam",
-      "intervention": "Metamorph Scarab"
+      "researchImg": "",
+      "intervention": "Metamorph Scarab",
+      "interventionImg": "images/intervention/leo-i.webp"
     },
     {
       "name": "Riker",
@@ -114,8 +150,11 @@
       "transportation": "Timed Take One Currency",
       "transportationImg": "images/transportation/riker-t.svg",
       "fortification": "Timed Take One Unique",
+      "fortificationImg": "images/fortification/riker-f.webp",
       "research": "Timed Take One Veiled Rare",
-      "intervention": "Blighted Scarab"
+      "researchImg": "",
+      "intervention": "Blighted Scarab",
+      "interventionImg": "images/intervention/riker-i.webp"
     },
     {
       "name": "Rin Yushu",
@@ -123,8 +162,11 @@
       "transportation": "Normal Maps",
       "transportationImg": "images/transportation/rin-yushu-t.svg",
       "fortification": "Rare maps",
+      "fortificationImg": "images/fortification/rin-yushu-f.webp",
       "research": "Unique Maps",
-      "intervention": "Cartography Scarab"
+      "researchImg": "",
+      "intervention": "Cartography Scarab",
+      "interventionImg": "images/intervention/rin-yushu-i.webp"
     },
     {
       "name": "Tora",
@@ -132,8 +174,11 @@
       "transportation": "Timed Take One Item",
       "transportationImg": "images/transportation/tora-t.svg",
       "fortification": "Lab Enchanted Gloves/Boots/Helmets",
+      "fortificationImg": "images/fortification/tora-f.webp",
       "research": "20/70/200M exp to a Gem",
-      "intervention": "Harbinger Scarab"
+      "researchImg": "",
+      "intervention": "Harbinger Scarab",
+      "interventionImg": "images/intervention/tora-i.webp"
     },
     {
       "name": "Vagan",
@@ -141,8 +186,11 @@
       "transportation": "Legion Splinters",
       "transportationImg": "images/transportation/vagan-t.svg",
       "fortification": "Legion Chests",
+      "fortificationImg": "images/fortification/vagan-f.webp",
       "research": "Incubators",
-      "intervention": "Legion Scarab"
+      "researchImg": "",
+      "intervention": "Legion Scarab",
+      "interventionImg": "images/intervention/vagan-i.webp"
     },
     {
       "name": "Vorici",
@@ -150,8 +198,11 @@
       "transportation": "Random Quality Gems",
       "transportationImg": "images/transportation/vorici-t.svg",
       "fortification": "Socket Currency",
+      "fortificationImg": "images/fortification/vorici-f.webp",
       "research": "Craft White Sockets",
-      "intervention": "Shaper Scarab"
+      "researchImg": "",
+      "intervention": "Shaper Scarab",
+      "interventionImg": "images/intervention/vorici-i.webp"
     }
   ]
 }
