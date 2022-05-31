@@ -28,10 +28,9 @@ const HiddenRow = () => {
     <div className="hide-member-container">
       {members.map((member, index) => {
         return (
-          <div className="checkbox-item-container">
+          <div key={member.name} className="checkbox-item-container">
             <input
               type="checkbox"
-              key={member.name}
               id={member.name}
               checked={!counters[index]?.hidden}
               onChange={() => handleHiddenClick(member.name)}
