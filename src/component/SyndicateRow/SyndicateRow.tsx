@@ -74,14 +74,16 @@ const SyndicateRow = ({
           }}
         >
           {areaName === "transportation" && (
-            <div className="">{member.transportation}</div>
+            <div className="item-text">{member.transportation}</div>
           )}
           {areaName === "fortification" && (
-            <div className="">{member.fortification}</div>
+            <div className="item-text">{member.fortification}</div>
           )}
-          {areaName === "research" && <div className="">{member.research}</div>}
+          {areaName === "research" && (
+            <div className="item-text">{member.research}</div>
+          )}
           {areaName === "intervention" && (
-            <div className="">{member.intervention}</div>
+            <div className="item-text">{member.intervention}</div>
           )}
         </div>
       ))}

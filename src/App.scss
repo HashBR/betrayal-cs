@@ -21,17 +21,13 @@ $item-padding: 4px;
   flex-direction: column;
   justify-content: flex-end;
   flex-direction: column;
-
   border: 1px solid rgba(196, 154, 124, 0.3);
   padding: $item-padding;
-
   color: rgb(226, 213, 206);
   -webkit-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
   -moz-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
   box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
-
   text-align: center;
-
   font-size: clamp(0.6rem, 0.8vw, 1.2rem);
   text-shadow: 0px 0px 5px #000000, 0px 0px 5px #000000, 0px 0px 5px #000000,
     0px 0px 10px #000000, 0px 0px 15px #000000;
