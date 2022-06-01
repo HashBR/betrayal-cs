@@ -1,11 +1,17 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CountersContext } from "../../context/counters";
 import { SyndicateContext } from "../../context/members";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
 import { ISyndicate } from "../../interfaces/ISyndicate";
 import IncrementOnPosition from "../../utils/IncrementOnPosition";
+import { arrayMoveImmutable } from "array-move";
 
 import "./HeaderTable.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const HeaderTable = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
@@ -21,9 +27,35 @@ const HeaderTable = () => {
     });
   };
 
+  const [shiftedMembers, setShiftedMembers] = useState(
+    arrayMoveImmutable(members, 0, 0)
+  );
+  const handleMove = (direction: number, memberPosition: number) => {
+    //-1 left, +1 right
+    var newPosition = memberPosition + direction;
+    if (newPosition < 0) {
+      newPosition = members.length - 1;
+    }
+    if (newPosition > members.length - 1) {
+      newPosition = 0;
+    }
+    setShiftedMembers((previousMembers) => {
+      return arrayMoveImmutable(previousMembers, memberPosition, newPosition);
+    });
+    setCounters((previousCounters) => {
+      return arrayMoveImmutable(previousCounters, memberPosition, newPosition);
+    });
+  };
+
+  // useEffect(() => {
+  //   // console.log(counters);
+  //   setShiftedCounters(arrayMoveImmutable(counters, 0, 0));
+  //   console.log(shiftedCounters);
+  // }, []);
+
   return (
     <>
-      {members.map((member, index) => (
+      {shiftedMembers.map((member, index) => (
         <div
           key={member.name}
           className={`grid-item member-img clickable color${
@@ -37,6 +69,22 @@ const HeaderTable = () => {
           }}
           onClick={() => handleCounter(member.name)}
         >
+          {/* <div className="directions">
+            <span
+              onClick={() => {
+                handleMove(-1, index);
+              }}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} size="lg" />
+            </span>
+            <span
+              onClick={() => {
+                handleMove(+1, index);
+              }}
+            >
+              <FontAwesomeIcon icon={faChevronRight} size="lg" />
+            </span>
+          </div> */}
           <div className="member-name">{member.name}</div>
         </div>
       ))}

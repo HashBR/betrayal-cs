@@ -34,9 +34,6 @@ const Share = () => {
     toast("Copied to Clipboard!");
   };
 
-  // useEffect(() => {
-  //   console.log(shareCode);
-  // }, [shareCode]);
   return (
     <div className="share-area">
       <ToastContainer

@@ -13,3 +13,11 @@
   text-align: center;
   text-shadow: 0px 0px 10px #000000, 0px 0px 5px #000000, 0px 0px 5px #000000;
 }
+
+.directions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
