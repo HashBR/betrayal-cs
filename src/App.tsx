@@ -7,6 +7,8 @@ import { useContext } from "react";
 import HideColumnMenu from "./component/HideColumnMenu/HideColumnMenu";
 import { CountersContextProps } from "./interfaces/CountersContextProps";
 import { CountersContext } from "./context/counters";
+import { HelpModalContext } from "./context/helpmodal";
+import HelpModal from "./component/HelpModal/HelpModal";
 
 function App() {
   const { counters } = useContext<CountersContextProps>(CountersContext);
@@ -14,9 +16,11 @@ function App() {
   const visibleCount = counters.reduce((acc, counter) => {
     return acc + (counter.hidden ? 0 : 1);
   }, 0);
+  const { isHelpOpen } = useContext(HelpModalContext);
 
   return (
     <div className="main-div">
+      {isHelpOpen && <HelpModal></HelpModal>}
       {visibleCount === 0 && (
         <div className="grid-item all-hidden">
           <h1>Ops, you hid everyone!</h1>

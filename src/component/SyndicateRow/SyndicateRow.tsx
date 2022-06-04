@@ -14,7 +14,7 @@ const SyndicateRow = ({
   areaName = "transportation",
 }) => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters, setShareCode, positions, setPositions } =
+  const { counters, setCounters, setShareCode, positions } =
     useContext<CountersContextProps>(CountersContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);

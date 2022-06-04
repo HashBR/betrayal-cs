@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CountersContext } from "../../context/counters";
 import { SyndicateContext } from "../../context/members";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
@@ -90,10 +90,7 @@ const HeaderTable = () => {
               />
             </span>
           </div>
-          <div className="member-name">
-            {/* {member.name} - {positions[index]} -{" "} */}
-            {members[positions[index]].name}
-          </div>
+          <div className="member-name">{members[positions[index]].name}</div>
         </div>
       ))}
     </>

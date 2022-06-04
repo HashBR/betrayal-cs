@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { ICounters } from "../interfaces/ICounters";
 import { CountersProps } from "../interfaces/CountersProps";
 import { SyndicateContext } from "./members";
@@ -6,6 +6,7 @@ import { ISyndicate } from "../interfaces/ISyndicate";
 import { CountersContextProps } from "../interfaces/CountersContextProps";
 import ShareCodeSplitter from "../utils/ShareCodeSplitter";
 import CodeValidator from "../utils/CodeValidator";
+import { HelpModalContext } from "./helpmodal";
 
 const LOCAL_STORAGE_KEY = "betrayalcs.counters";
 
@@ -29,11 +30,15 @@ export const CountersProvider = (props: CountersProps) => {
     CodeValidator(window.location.href)
   );
 
+  const { setIsHelpOpen } = useContext(HelpModalContext);
+
   useEffect(() => {
     const storedCounters = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
     if (storedCounters && shareCode === "00000".repeat(members.length)) {
       setCounters(storedCounters);
     } else {
+      //First time coming, it will show the help for you
+      setIsHelpOpen(true);
       members.forEach((member, columnIndex) => {
         const loadedCounter = ShareCodeSplitter(shareCode, columnIndex);
         if (loadedCounter != null && loadedCounter !== undefined) {
