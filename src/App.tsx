@@ -16,42 +16,46 @@ function App() {
     useContext<CountersContextProps>(CountersContext);
   // return how many counters are hidden
   const visibleCount = counters.reduce((acc, counter) => {
-    if (!counter.hidden) {
-      return acc + 1;
-    } else {
-      return acc;
-    }
+    return acc + (counter.hidden ? 0 : 1);
   }, 0);
 
   return (
     <div className="main-div">
-      <div
-        className="grid-container"
-        style={{ gridTemplateColumns: `90px repeat(${visibleCount}, 1fr)` }}
-      >
-        <InfoCell></InfoCell>
-        <HeaderTable></HeaderTable>
-        <SyndicateRow
-          rowIndex={3}
-          letter={"T"}
-          areaName={"transportation"}
-        ></SyndicateRow>
-        <SyndicateRow
-          rowIndex={2}
-          letter={"F"}
-          areaName={"fortification"}
-        ></SyndicateRow>
-        <SyndicateRow
-          rowIndex={1}
-          letter={"R"}
-          areaName={"research"}
-        ></SyndicateRow>
-        <SyndicateRow
-          rowIndex={0}
-          letter={"I"}
-          areaName={"intervention"}
-        ></SyndicateRow>
-      </div>
+      {visibleCount === 0 && (
+        <div className="grid-item all-hidden">
+          <h1>Ops, you are trying to hide everyone!</h1>
+        </div>
+      )}
+      {visibleCount > 0 && (
+        <div
+          className="grid-container"
+          style={{ gridTemplateColumns: `90px repeat(${visibleCount}, 1fr)` }}
+        >
+          <InfoCell></InfoCell>
+
+          <HeaderTable></HeaderTable>
+          <SyndicateRow
+            rowIndex={3}
+            letter={"T"}
+            areaName={"transportation"}
+          ></SyndicateRow>
+          <SyndicateRow
+            rowIndex={2}
+            letter={"F"}
+            areaName={"fortification"}
+          ></SyndicateRow>
+          <SyndicateRow
+            rowIndex={1}
+            letter={"R"}
+            areaName={"research"}
+          ></SyndicateRow>
+          <SyndicateRow
+            rowIndex={0}
+            letter={"I"}
+            areaName={"intervention"}
+          ></SyndicateRow>
+        </div>
+      )}
       <div className="menu">
         <HiddenRow></HiddenRow>
         <Share></Share>

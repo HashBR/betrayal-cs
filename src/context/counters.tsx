@@ -14,12 +14,17 @@ export const CountersContext = createContext<CountersContextProps>({
   setCounters: () => {},
   shareCode: "",
   setShareCode: () => {},
+  positions: [],
+  setPositions: () => {},
 });
 
 export const CountersProvider = (props: CountersProps) => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
   const [counters, setCounters] = useState<ICounters>([]);
-
+  // 0 = Aisling, 1 = Cameria .... 16 = Vorici --- Alphabetically distributed
+  const [positions, setPositions] = useState<Array<number>>([
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+  ]);
   const [shareCode, setShareCode] = useState<string>(
     CodeValidator(window.location.href)
   );
@@ -35,7 +40,12 @@ export const CountersProvider = (props: CountersProps) => {
           setCounters((previousCounters) => {
             return [
               ...previousCounters,
-              { field: member.name, count: loadedCounter, hidden: false },
+              {
+                field: member.name,
+                count: loadedCounter,
+                hidden: false,
+                positions: [columnIndex],
+              },
             ];
           });
         }
@@ -47,7 +57,14 @@ export const CountersProvider = (props: CountersProps) => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(counters));
   }, [counters]);
 
-  const value = { counters, setCounters, shareCode, setShareCode };
+  const value = {
+    counters,
+    setCounters,
+    shareCode,
+    setShareCode,
+    positions,
+    setPositions,
+  };
   return (
     <CountersContext.Provider value={value}>
       {props.children}

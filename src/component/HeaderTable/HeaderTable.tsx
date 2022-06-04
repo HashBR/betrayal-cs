@@ -8,14 +8,11 @@ import { arrayMoveImmutable } from "array-move";
 
 import "./HeaderTable.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderTable = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters } =
+  const { counters, setCounters, positions, setPositions } =
     useContext<CountersContextProps>(CountersContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
@@ -27,65 +24,69 @@ const HeaderTable = () => {
     });
   };
 
-  const [shiftedMembers, setShiftedMembers] = useState(
-    arrayMoveImmutable(members, 0, 0)
-  );
-  const handleMove = (direction: number, memberPosition: number) => {
+  const handleMove = (
+    //event is a mouseevent
+    event: React.MouseEvent<HTMLSpanElement, MouseEvent>,
+    direction: number,
+    memberPosition: number
+  ) => {
+    event.stopPropagation();
     //-1 left, +1 right
     var newPosition = memberPosition + direction;
+    // position goes around if it goes out of bounds
     if (newPosition < 0) {
       newPosition = members.length - 1;
     }
     if (newPosition > members.length - 1) {
       newPosition = 0;
     }
-    setShiftedMembers((previousMembers) => {
-      return arrayMoveImmutable(previousMembers, memberPosition, newPosition);
-    });
-    setCounters((previousCounters) => {
-      return arrayMoveImmutable(previousCounters, memberPosition, newPosition);
+    setPositions((previousPositions) => {
+      return arrayMoveImmutable(previousPositions, memberPosition, newPosition);
     });
   };
 
-  // useEffect(() => {
-  //   // console.log(counters);
-  //   setShiftedCounters(arrayMoveImmutable(counters, 0, 0));
-  //   console.log(shiftedCounters);
-  // }, []);
-
   return (
     <>
-      {shiftedMembers.map((member, index) => (
+      {members.map((member, index) => (
         <div
           key={member.name}
           className={`grid-item member-img clickable color${
-            counters[index]
-              ? String(counters[index].count).padStart(5, "0")[4]
+            counters[positions[index]]
+              ? String(counters[positions[index]].count).padStart(5, "0")[4]
               : "0"
           }`}
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/${member.img})`,
-            display: counters[index]?.hidden ? "none" : "flex",
+            backgroundImage: `url(${process.env.PUBLIC_URL}/${
+              members[positions[index]].img
+            })`,
+            display: counters[positions[index]]?.hidden ? "none" : "flex",
           }}
-          onClick={() => handleCounter(member.name)}
+          onClick={() => handleCounter(members[positions[index]].name)}
         >
-          {/* <div className="directions">
+          <div className="directions">
             <span
-              onClick={() => {
-                handleMove(-1, index);
+              onClick={(event) => {
+                handleMove(event, -1, index);
               }}
             >
-              <FontAwesomeIcon icon={faChevronLeft} size="lg" />
+              <FontAwesomeIcon className="arrow" icon={faArrowLeft} size="lg" />
             </span>
             <span
-              onClick={() => {
-                handleMove(+1, index);
+              onClick={(event) => {
+                handleMove(event, +1, index);
               }}
             >
-              <FontAwesomeIcon icon={faChevronRight} size="lg" />
+              <FontAwesomeIcon
+                className="arrow"
+                icon={faArrowRight}
+                size="lg"
+              />
             </span>
-          </div> */}
-          <div className="member-name">{member.name}</div>
+          </div>
+          <div className="member-name">
+            {/* {member.name} - {positions[index]} -{" "} */}
+            {members[positions[index]].name}
+          </div>
         </div>
       ))}
     </>

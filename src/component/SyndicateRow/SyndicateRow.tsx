@@ -14,7 +14,7 @@ const SyndicateRow = ({
   areaName = "transportation",
 }) => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters, setShareCode } =
+  const { counters, setCounters, setShareCode, positions, setPositions } =
     useContext<CountersContextProps>(CountersContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
@@ -51,39 +51,49 @@ const SyndicateRow = ({
         <div
           key={member.name}
           className={`grid-item clickable item-img color${
-            counters[index]
-              ? String(counters[index].count).padStart(5, "0")[rowIndex]
+            counters[positions[index]]
+              ? String(counters[positions[index]].count).padStart(5, "0")[
+                  rowIndex
+                ]
               : "0"
           }`}
-          onClick={() => handleCounter(member.name)}
+          onClick={() => handleCounter(members[positions[index]].name)}
           // backgroundImage diferent based on areaName
           style={{
             backgroundImage: `url(${process.env.PUBLIC_URL}/${
               areaName === "transportation"
-                ? member.transportationImg
+                ? members[positions[index]].transportationImg
                 : areaName === "fortification"
-                ? member.fortificationImg
+                ? members[positions[index]].fortificationImg
                 : areaName === "research"
-                ? member.researchImg
+                ? members[positions[index]].researchImg
                 : areaName === "intervention"
-                ? member.interventionImg
+                ? members[positions[index]].interventionImg
                 : ""
             })`,
             // display is none if hidden is true
-            display: counters[index]?.hidden ? "none" : "flex",
+            display: counters[positions[index]]?.hidden ? "none" : "flex",
           }}
         >
           {areaName === "transportation" && (
-            <div className="item-text">{member.transportation}</div>
+            <div className="item-text">
+              {members[positions[index]].transportation}
+            </div>
           )}
           {areaName === "fortification" && (
-            <div className="item-text">{member.fortification}</div>
+            <div className="item-text">
+              {members[positions[index]].fortification}
+            </div>
           )}
           {areaName === "research" && (
-            <div className="item-text">{member.research}</div>
+            <div className="item-text">
+              {members[positions[index]].research}
+            </div>
           )}
           {areaName === "intervention" && (
-            <div className="item-text">{member.intervention}</div>
+            <div className="item-text">
+              {members[positions[index]].intervention}
+            </div>
           )}
         </div>
       ))}
