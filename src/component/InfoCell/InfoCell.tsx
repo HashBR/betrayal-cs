@@ -1,17 +1,16 @@
+import Button from "../Button/Button";
 import "./InfoCell.scss";
 
 const InfoCell = () => {
   return (
     <div className="grid-item first info-cell">
-      <img
-        alt="PoE Logo"
-        className="logo-img"
-        src="https://web.poecdn.com/protected/image/layout/sentinellogo.png?key=gRYQQgc-tgNPZeE4SNPCdQ"
-      />
+      <Button width="100%" fontSize="1rem">
+        Help
+      </Button>
       <div className="info-text">
         <span className="description">Betrayal Cheat Sheet</span>
         <br></br>
-        <span className="version">v0.9.4</span>
+        <span className="version">v0.9.6</span>
       </div>
     </div>
   );

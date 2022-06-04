@@ -13,7 +13,7 @@
     max-height: 50%;
   }
   .info-text {
-    line-height: 0.9rem;
+    line-height: 0.92rem;
     align-self: stretch;
     height: 50%;
     width: 100%;
@@ -24,7 +24,7 @@
     padding: 0;
     border: 0;
   }
-  .info-text:nth-child(3) {
-    font-size: 0.55rem;
+  .info-text .version {
+    font-size: 0.8rem;
   }
 }

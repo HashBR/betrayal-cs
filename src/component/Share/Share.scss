@@ -44,64 +44,6 @@
   margin-left: 5px;
   line-height: 12px;
 }
-// Took from Pathofexile.com
-.button-text {
-  font-family: inherit;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border-radius: 4px;
-  background: url("https://web.poecdn.com/protected/image/custom-leagues/button.png?key=9k5SPmctR7m2JXCUMEzCAw")
-    #266513 repeat-x;
-  border: 0px none;
-  color: #a9d287;
-  transition-duration: 200ms;
-  margin: 2px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  background: url("https://web.poecdn.com/protected/image/layout/button/button-green-normal-left.png?key=m3tNDoK8ssfe-uwkfY5i-g")
-      no-repeat top left,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-normal-right.png?key=9HiVunkPjrKoL46Cjy20lg")
-      top right no-repeat,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-normal-middle.png?key=u12JHEvRrBGlgZ8wx6Cy8A")
-      top repeat-x,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-left.png?key=YWYm2nAWV9sQLR4Jlns8cg") -100px -100px
-      no-repeat,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-right.png?key=Zw_WgC8uFz4MKbK_1TWCGA") -100px -100px
-      no-repeat,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-middle.png?key=FPPFdUoVfTlr53LDdTqt1Q") -100px -100px
-      no-repeat,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-left.png?key=0Z9PP2deN4qhSjHSbwi4Fg") -100px -100px
-      no-repeat,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-right.png?key=VW43Vik8QhA6WaZrN_cN-Q") -100px -100px
-      no-repeat,
-    url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-middle.png?key=0WNzDCJ_urqkPNuJTmK9nA") -100px -100px
-      no-repeat;
-  background-size: contain;
-  padding: 10px 20px;
-  &:hover {
-    cursor: pointer;
-    background: url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-left.png?key=YWYm2nAWV9sQLR4Jlns8cg")
-        no-repeat top left,
-      url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-right.png?key=Zw_WgC8uFz4MKbK_1TWCGA")
-        top right no-repeat,
-      url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-middle.png?key=FPPFdUoVfTlr53LDdTqt1Q")
-        top repeat-x;
-    background-size: contain;
-    color: #a3e89b;
-  }
-  &:active {
-    background: url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-left.png?key=0Z9PP2deN4qhSjHSbwi4Fg")
-        no-repeat top left,
-      url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-right.png?key=VW43Vik8QhA6WaZrN_cN-Q")
-        top right no-repeat,
-      url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-middle.png?key=0WNzDCJ_urqkPNuJTmK9nA")
-        top repeat-x;
-    background-size: contain;
-    color: #35583b;
-  }
-}
 
 .Toastify__toast--default {
   font-family: "Fontin";
