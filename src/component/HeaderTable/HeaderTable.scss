@@ -29,3 +29,15 @@
     // box-shadow: #000000 0px 0px 10px, #000000 0px 0px 5px;
   }
 }
+
+@media (max-width: 1440px) {
+  .member-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .member-name {
+    font-size: 0.7rem;
+  }
+}

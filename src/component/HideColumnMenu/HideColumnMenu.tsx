@@ -7,9 +7,9 @@ import { SyndicateContext } from "../../context/members";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./HiddenRow.scss";
+import "./HideColumnMenu.scss";
 
-const HiddenRow = () => {
+const HideColumnMenu = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
   const { counters, setCounters } =
     useContext<CountersContextProps>(CountersContext);
@@ -24,6 +24,22 @@ const HiddenRow = () => {
       });
     });
   };
+  const visibleCount = counters.reduce((acc, counter) => {
+    return acc + (counter.hidden ? 0 : 1);
+  }, 0);
+
+  const toggleHiddenAll = () => {
+    setCounters((previousCounters) => {
+      return previousCounters.map((counter) => {
+        // return { ...counter, hidden: !counter.hidden };
+        return {
+          ...counter,
+          hidden: visibleCount === 0 ? !counter.hidden : true,
+        };
+      });
+    });
+  };
+
   return (
     <div className="hide-member-container">
       {members.map((member, index) => {
@@ -61,8 +77,15 @@ const HiddenRow = () => {
           </div>
         );
       })}
+      <Button width="15%" fontSize="0.9rem" onClick={toggleHiddenAll}>
+        <FontAwesomeIcon
+          icon={visibleCount === 0 ? faEye : faEyeSlash}
+          size="lg"
+        />{" "}
+        All
+      </Button>
     </div>
   );
 };
 
-export default HiddenRow;
+export default HideColumnMenu;

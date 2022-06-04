@@ -8,7 +8,10 @@ import { arrayMoveImmutable } from "array-move";
 
 import "./HeaderTable.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const HeaderTable = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
@@ -69,7 +72,11 @@ const HeaderTable = () => {
                 handleMove(event, -1, index);
               }}
             >
-              <FontAwesomeIcon className="arrow" icon={faArrowLeft} size="lg" />
+              <FontAwesomeIcon
+                className="arrow"
+                icon={faChevronLeft}
+                size="lg"
+              />
             </span>
             <span
               onClick={(event) => {
@@ -78,7 +85,7 @@ const HeaderTable = () => {
             >
               <FontAwesomeIcon
                 className="arrow"
-                icon={faArrowRight}
+                icon={faChevronRight}
                 size="lg"
               />
             </span>

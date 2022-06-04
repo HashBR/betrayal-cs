@@ -5,13 +5,13 @@ import ShareCodeCreator from "../../utils/ShareCodeCreator";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import "./Share.scss";
+import "./TableManagement.scss";
 import Button from "../Button/Button";
 import ShareCodeSplitter from "../../utils/ShareCodeSplitter";
 import { ISyndicate } from "../../interfaces/ISyndicate";
 import { SyndicateContext } from "../../context/members";
 
-const Share = () => {
+const TableManagement = () => {
   const { counters, setCounters, setShareCode } =
     useContext<CountersContextProps>(CountersContext);
   const { members } = useContext<ISyndicate>(SyndicateContext);
@@ -69,17 +69,13 @@ const Share = () => {
         closeButton={false}
       />
       <div className="share-container">
-        <Button onClick={() => handleShare()} width="300px" fontSize="1.25rem">
+        <Button onClick={() => handleShare()} width="100%" fontSize="1.25rem">
           Copy Code to Clipboard
         </Button>
         <span className="share-info">It will make an URL for you!</span>
       </div>
       <div className="clear-container">
-        <Button
-          onClick={() => resetCounters()}
-          width="300px"
-          fontSize="1.25rem"
-        >
+        <Button onClick={() => resetCounters()} width="100%" fontSize="1.25rem">
           Clear Cheat Sheet
         </Button>
         <span className="share-info">
@@ -89,7 +85,7 @@ const Share = () => {
       <div className="load-defaultcode-container">
         <Button
           onClick={() => loadDefaultCounters()}
-          width="300px"
+          width="100%"
           fontSize="1.25rem"
         >
           Load Default
@@ -100,4 +96,4 @@ const Share = () => {
   );
 };
 
-export default Share;
+export default TableManagement;

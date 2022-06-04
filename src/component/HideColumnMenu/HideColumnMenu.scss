@@ -1,5 +1,6 @@
 .hide-member-container {
-  width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -14,10 +15,16 @@
   -moz-box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
   box-shadow: inset 0px 0px 10px 2px rgba(196, 154, 124, 0.2);
   padding: 5px;
+  font-size: clamp(0.8rem, 0.8vw, 1.8rem);
+  .button-text {
+    flex-grow: 1 !important;
+    // width: 100% !important;
+  }
 }
 
 .checkbox-item-container {
   width: 19%;
+  line-height: 1.5rem;
   [type="checkbox"] {
     opacity: 0;
   }
@@ -25,5 +32,17 @@
   .checkbox-text,
   .eye-icon {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 1440px) {
+  .hide-member-container {
+    flex-grow: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkbox-item-container {
+    width: 49%;
   }
 }

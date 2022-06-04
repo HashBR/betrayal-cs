@@ -1,19 +1,15 @@
 import "./App.scss";
 import SyndicateRow from "./component/SyndicateRow/SyndicateRow";
 import HeaderTable from "./component/HeaderTable/HeaderTable";
-import Share from "./component/Share/Share";
+import TableManagement from "./component/TableManagement/TableManagement";
 import InfoCell from "./component/InfoCell/InfoCell";
 import { useContext } from "react";
-import { ISyndicate } from "./interfaces/ISyndicate";
-import { SyndicateContext } from "./context/members";
-import HiddenRow from "./component/HiddenRow/HiddenRow";
+import HideColumnMenu from "./component/HideColumnMenu/HideColumnMenu";
 import { CountersContextProps } from "./interfaces/CountersContextProps";
 import { CountersContext } from "./context/counters";
 
 function App() {
-  const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters, setShareCode } =
-    useContext<CountersContextProps>(CountersContext);
+  const { counters } = useContext<CountersContextProps>(CountersContext);
   // return how many counters are hidden
   const visibleCount = counters.reduce((acc, counter) => {
     return acc + (counter.hidden ? 0 : 1);
@@ -23,7 +19,11 @@ function App() {
     <div className="main-div">
       {visibleCount === 0 && (
         <div className="grid-item all-hidden">
-          <h1>Ops, you are trying to hide everyone!</h1>
+          <h1>Ops, you hid everyone!</h1>
+          <img
+            alt="Tormented Spirit"
+            src={`${process.env.PUBLIC_URL}/images/Torment.png`}
+          />
         </div>
       )}
       {visibleCount > 0 && (
@@ -57,8 +57,8 @@ function App() {
         </div>
       )}
       <div className="menu">
-        <HiddenRow></HiddenRow>
-        <Share></Share>
+        <HideColumnMenu></HideColumnMenu>
+        <TableManagement></TableManagement>
       </div>
     </div>
   );
