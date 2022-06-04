@@ -7,11 +7,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./Share.scss";
 import Button from "../Button/Button";
+import ShareCodeSplitter from "../../utils/ShareCodeSplitter";
+import { ISyndicate } from "../../interfaces/ISyndicate";
+import { SyndicateContext } from "../../context/members";
 
 const Share = () => {
   const { counters, setCounters, setShareCode } =
     useContext<CountersContextProps>(CountersContext);
-
+  const { members } = useContext<ISyndicate>(SyndicateContext);
   const resetCounters = () => {
     setCounters((previousCounters) => {
       return previousCounters.map((counter) => {
@@ -19,6 +22,22 @@ const Share = () => {
       });
     });
     toast("Cleared!");
+  };
+
+  const loadDefaultCounters = () => {
+    const defaultShareCode: string =
+      "0200112001000032301200013233310211112002211002000001101011012301100000220122212202112";
+    members.forEach((member, columnIndex) => {
+      const loadedCounter = ShareCodeSplitter(defaultShareCode, columnIndex);
+      const found = counters.find((item) => item.field === member.name);
+      if (found) {
+        found.count = loadedCounter;
+      }
+    });
+    setCounters((previousCounters) => {
+      return [...previousCounters];
+    });
+    toast("Loaded!");
   };
 
   const handleShare = async () => {
@@ -34,9 +53,6 @@ const Share = () => {
     toast("Copied to Clipboard!");
   };
 
-  // useEffect(() => {
-  //   console.log(shareCode);
-  // }, [shareCode]);
   return (
     <div className="share-area">
       <ToastContainer
@@ -53,18 +69,15 @@ const Share = () => {
         closeButton={false}
       />
       <div className="share-container">
-        <Button onClick={() => handleShare()} width="250px" fontSize="1.25rem">
-          Copy to Clipboard
+        <Button onClick={() => handleShare()} width="300px" fontSize="1.25rem">
+          Copy Code to Clipboard
         </Button>
-        <span className="share-info">
-          This will copy the share url to your clipboard. Anybody opening that
-          link will see the same Cheat Sheet as you.
-        </span>
+        <span className="share-info">It will make an URL for you!</span>
       </div>
       <div className="clear-container">
         <Button
           onClick={() => resetCounters()}
-          width="250px"
+          width="300px"
           fontSize="1.25rem"
         >
           Clear Cheat Sheet
@@ -72,6 +85,16 @@ const Share = () => {
         <span className="share-info">
           This will clear your Betrayal Cheat Sheet.
         </span>
+      </div>
+      <div className="load-defaultcode-container">
+        <Button
+          onClick={() => loadDefaultCounters()}
+          width="300px"
+          fontSize="1.25rem"
+        >
+          Load Default
+        </Button>
+        <span className="share-info">The most common cheat sheet.</span>
       </div>
     </div>
   );

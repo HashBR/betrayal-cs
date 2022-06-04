@@ -1,15 +1,18 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CountersContext } from "../../context/counters";
 import { SyndicateContext } from "../../context/members";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
 import { ISyndicate } from "../../interfaces/ISyndicate";
 import IncrementOnPosition from "../../utils/IncrementOnPosition";
+import { arrayMoveImmutable } from "array-move";
 
 import "./HeaderTable.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderTable = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters } =
+  const { counters, setCounters, positions, setPositions } =
     useContext<CountersContextProps>(CountersContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
@@ -21,23 +24,69 @@ const HeaderTable = () => {
     });
   };
 
+  const handleMove = (
+    //event is a mouseevent
+    event: React.MouseEvent<HTMLSpanElement, MouseEvent>,
+    direction: number,
+    memberPosition: number
+  ) => {
+    event.stopPropagation();
+    //-1 left, +1 right
+    var newPosition = memberPosition + direction;
+    // position goes around if it goes out of bounds
+    if (newPosition < 0) {
+      newPosition = members.length - 1;
+    }
+    if (newPosition > members.length - 1) {
+      newPosition = 0;
+    }
+    setPositions((previousPositions) => {
+      return arrayMoveImmutable(previousPositions, memberPosition, newPosition);
+    });
+  };
+
   return (
     <>
       {members.map((member, index) => (
         <div
           key={member.name}
           className={`grid-item member-img clickable color${
-            counters[index]
-              ? String(counters[index].count).padStart(5, "0")[4]
+            counters[positions[index]]
+              ? String(counters[positions[index]].count).padStart(5, "0")[4]
               : "0"
           }`}
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/${member.img})`,
-            display: counters[index]?.hidden ? "none" : "flex",
+            backgroundImage: `url(${process.env.PUBLIC_URL}/${
+              members[positions[index]].img
+            })`,
+            display: counters[positions[index]]?.hidden ? "none" : "flex",
           }}
-          onClick={() => handleCounter(member.name)}
+          onClick={() => handleCounter(members[positions[index]].name)}
         >
-          <div className="member-name">{member.name}</div>
+          <div className="directions">
+            <span
+              onClick={(event) => {
+                handleMove(event, -1, index);
+              }}
+            >
+              <FontAwesomeIcon className="arrow" icon={faArrowLeft} size="lg" />
+            </span>
+            <span
+              onClick={(event) => {
+                handleMove(event, +1, index);
+              }}
+            >
+              <FontAwesomeIcon
+                className="arrow"
+                icon={faArrowRight}
+                size="lg"
+              />
+            </span>
+          </div>
+          <div className="member-name">
+            {/* {member.name} - {positions[index]} -{" "} */}
+            {members[positions[index]].name}
+          </div>
         </div>
       ))}
     </>

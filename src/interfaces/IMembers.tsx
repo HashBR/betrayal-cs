@@ -1,4 +1,4 @@
-export interface IMembers {
+export interface IMembersValue {
   name: string;
   img: string;
   transportation: string;
@@ -10,3 +10,5 @@ export interface IMembers {
   intervention: string;
   interventionImg: string;
 }
+
+export interface IMembers extends Array<IMembersValue> {}
