@@ -36,6 +36,11 @@ const HeaderTable = () => {
     event.stopPropagation();
     //-1 left, +1 right
     var newPosition = memberPosition + direction;
+    // while loop to skip hidden members
+    while (counters[newPosition].hidden) {
+      newPosition = newPosition + direction;
+    }
+    // console.log(members[memberPosition].name, counters[memberPosition].hidden);
     // position goes around if it goes out of bounds
     if (newPosition < 0) {
       newPosition = members.length - 1;
