@@ -14,7 +14,7 @@ const InfoCell = () => {
       <div className="info-text">
         <span className="description">Betrayal Cheat Sheet</span>
         <br></br>
-        <span className="version">v0.9.8</span>
+        <span className="version">v0.9.9</span>
       </div>
     </div>
   );

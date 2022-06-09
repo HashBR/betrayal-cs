@@ -40,7 +40,6 @@ const HeaderTable = () => {
     while (counters[newPosition].hidden) {
       newPosition = newPosition + direction;
     }
-    // console.log(members[memberPosition].name, counters[memberPosition].hidden);
     // position goes around if it goes out of bounds
     if (newPosition < 0) {
       newPosition = members.length - 1;
