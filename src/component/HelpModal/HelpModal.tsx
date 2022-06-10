@@ -31,7 +31,7 @@ const HelpModal = () => {
           <span className="help-title">Help</span>
           <hr className="hr" />
           <p className="tutorial-text">
-            Click on each table icon to change its colors.
+            Click on each cell to change its colors.
           </p>
           <span className="tutorial-text">
             You can use the arrows to move each member left or right by clicking
@@ -49,8 +49,8 @@ const HelpModal = () => {
             &nbsp;right next to each member image.
           </span>
           <p className="tutorial-text">
-            You can also hide each member by scrolling past it and clicking on
-            these icons&nbsp;
+            You can also hide each member by scrolling past the table and
+            clicking on these icons&nbsp;
             <FontAwesomeIcon
               className="icons-in-text"
               size="xs"

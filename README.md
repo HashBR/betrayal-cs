@@ -1,6 +1,6 @@
-# Read-Me
+# Betrayal Cheat Sheet
 
-This project was made to help players of the ARPG/MMORPG Path of Exile.
+This project was made to help players of the ARPG/MMORPG Path of Exile by Grinding Gear Games.
 
 It's a cheat sheet for the Betrayal/Syndicate mechanic of the game. It's very editable and you can share an URL with a code so your cheat sheet can be seen by others.
 
@@ -8,7 +8,7 @@ It's a cheat sheet for the Betrayal/Syndicate mechanic of the game. It's very ed
 
 You can PM the author on Reddit or open an issue.
 
-#### I didn't like the image for a cell, can I suggest a better one? Or the image and/or the text is misleading/wrong.
+### I didn't like the image for a cell, can I suggest a better one? Or the image and/or the text is misleading/wrong.
 
 Of course you can! If you want to make your own image, try to save as webp or png. And the dimensions are 80x80 pixels.
 

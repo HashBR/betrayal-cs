@@ -10,6 +10,7 @@ import Button from "../Button/Button";
 import ShareCodeSplitter from "../../utils/ShareCodeSplitter";
 import { ISyndicate } from "../../interfaces/ISyndicate";
 import { SyndicateContext } from "../../context/members";
+import Extras from "../Extras/Extras";
 
 const TableManagement = () => {
   const { counters, setCounters, setShareCode } =
@@ -54,44 +55,46 @@ const TableManagement = () => {
   };
 
   return (
-    <div className="share-area">
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        limit={1}
-        closeButton={false}
-      />
-      <div className="share-container">
-        <Button onClick={() => handleShare()} width="100%" fontSize="1.25rem">
-          Copy Code to Clipboard
-        </Button>
-        <span className="share-info">It will make an URL for you!</span>
+    <div className="table-management-container">
+      <div className="share-area">
+        <ToastContainer
+          position="bottom-center"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          limit={1}
+          closeButton={false}
+        />
+        <div className="share-container">
+          <Button onClick={() => handleShare()} width="100%" fontSize="1.2rem">
+            Copy Code to Clipboard
+          </Button>
+          <span className="share-info">It will make an URL for you!</span>
+        </div>
+        <div className="clear-container">
+          <Button
+            onClick={() => resetCounters()}
+            width="100%"
+            fontSize="1.2rem"
+          >
+            Clear Cheat Sheet
+          </Button>
+          <span className="share-info">It will reset to blank cells.</span>
+        </div>
+        <div className="load-defaultcode-container">
+          <Button
+            onClick={() => loadDefaultCounters()}
+            width="100%"
+            fontSize="1.2rem"
+          >
+            Load Default
+          </Button>
+          <span className="share-info">The most common cheat sheet.</span>
+        </div>
       </div>
-      <div className="clear-container">
-        <Button onClick={() => resetCounters()} width="100%" fontSize="1.25rem">
-          Clear Cheat Sheet
-        </Button>
-        <span className="share-info">
-          This will clear your Betrayal Cheat Sheet.
-        </span>
-      </div>
-      <div className="load-defaultcode-container">
-        <Button
-          onClick={() => loadDefaultCounters()}
-          width="100%"
-          fontSize="1.25rem"
-        >
-          Load Default
-        </Button>
-        <span className="share-info">The most common cheat sheet.</span>
-      </div>
+      <Extras></Extras>
     </div>
   );
 };
