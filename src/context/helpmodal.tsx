@@ -15,7 +15,6 @@ export const HelpModalProvider = (props: HelpModalProps) => {
     const storedHelpModal = JSON.parse(
       localStorage.getItem(LOCAL_STORAGE_KEY)!
     );
-    console.log(storedHelpModal);
     if (storedHelpModal !== null) {
       setIsHelpOpen(storedHelpModal);
     } else {

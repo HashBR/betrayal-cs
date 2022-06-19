@@ -36,10 +36,6 @@ const HeaderTable = () => {
     event.stopPropagation();
     //-1 left, +1 right
     var newPosition = memberPosition + direction;
-    // while loop to skip hidden members
-    while (counters[newPosition].hidden) {
-      newPosition = newPosition + direction;
-    }
     // position goes around if it goes out of bounds
     if (newPosition < 0) {
       newPosition = members.length - 1;
@@ -47,9 +43,22 @@ const HeaderTable = () => {
     if (newPosition > members.length - 1) {
       newPosition = 0;
     }
-    setPositions((previousPositions) => {
-      return arrayMoveImmutable(previousPositions, memberPosition, newPosition);
+    // while loop to skip hidden members
+    while (counters[newPosition].hidden) {
+      newPosition = newPosition + direction;
+    }
+
+    const movedPositons = arrayMoveImmutable(
+      positions,
+      memberPosition,
+      newPosition
+    );
+    setPositions(movedPositons);
+    const newCounters = counters.map((counter, index) => {
+      counter.position = movedPositons[index];
+      return counter;
     });
+    setCounters(newCounters);
   };
 
   return (

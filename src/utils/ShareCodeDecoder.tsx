@@ -6,7 +6,6 @@ const ShareCodeDecoder = (
     return atob(base64string)
       .split("")
       .map((char: string) => {
-        // console.log(char.charCodeAt(0).toString(16).padStart(2, "0"));
         return char.charCodeAt(0).toString(16).padStart(2, "0");
       })
       .join("");

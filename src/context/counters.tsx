@@ -7,7 +7,7 @@ import { CountersContextProps } from "../interfaces/CountersContextProps";
 import ShareCodeSplitter from "../utils/ShareCodeSplitter";
 import CodeValidator from "../utils/CodeValidator";
 
-const LOCAL_STORAGE_KEY = "betrayalcs.counters";
+const LOCAL_STORAGE_KEY = "betrayalcs.ms";
 
 export const CountersContext = createContext<CountersContextProps>({
   counters: [],
@@ -31,8 +31,10 @@ export const CountersProvider = (props: CountersProps) => {
 
   useEffect(() => {
     const storedCounters = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
+    console.log(positions);
     if (storedCounters && shareCode === "00000".repeat(members.length)) {
       setCounters(storedCounters);
+      setPositions(storedCounters.map((counter: any) => counter.position));
     } else {
       members.forEach((member, columnIndex) => {
         const loadedCounter = ShareCodeSplitter(shareCode, columnIndex);
@@ -44,7 +46,7 @@ export const CountersProvider = (props: CountersProps) => {
                 field: member.name,
                 count: loadedCounter,
                 hidden: false,
-                positions: [columnIndex],
+                position: columnIndex,
               },
             ];
           });

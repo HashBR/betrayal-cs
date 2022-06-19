@@ -59,7 +59,7 @@ const TableManagement = () => {
       <div className="share-area">
         <ToastContainer
           position="bottom-center"
-          autoClose={2000}
+          autoClose={500}
           hideProgressBar
           newestOnTop={false}
           closeOnClick
