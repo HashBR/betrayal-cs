@@ -17,7 +17,7 @@ export const OptionsProvider = (props: OptionsProps) => {
     if (storedOptions !== null) {
       setIsColorblind(storedOptions);
     } else {
-      setIsColorblind(true);
+      setIsColorblind(false);
     }
   }, []);
 

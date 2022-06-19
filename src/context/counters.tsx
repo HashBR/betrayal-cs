@@ -32,7 +32,6 @@ export const CountersProvider = (props: CountersProps) => {
     const storedCounters = JSON.parse(
       localStorage.getItem(LOCAL_STORAGE_KEY_SYNDICATE)!
     );
-    console.log(positions);
     if (storedCounters && shareCode === "00000".repeat(members.length)) {
       setCounters(storedCounters);
       setPositions(storedCounters.map((counter: any) => counter.position));
