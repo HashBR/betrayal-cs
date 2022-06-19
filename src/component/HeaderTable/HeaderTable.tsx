@@ -12,11 +12,14 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { IOptions } from "../../interfaces/IOptions";
+import { OptionsContext } from "../../context/options";
 
 const HeaderTable = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
   const { counters, setCounters, positions, setPositions } =
     useContext<CountersContextProps>(CountersContext);
+  const { isColorblind } = useContext<IOptions>(OptionsContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
     if (found) {
@@ -70,7 +73,9 @@ const HeaderTable = () => {
             counters[positions[index]]
               ? String(counters[positions[index]].count).padStart(5, "0")[4]
               : "0"
-          }`}
+          }
+          ${isColorblind ? "colorblind" : ""}
+          `}
           style={{
             backgroundImage: `url(${process.env.PUBLIC_URL}/${
               members[positions[index]].img

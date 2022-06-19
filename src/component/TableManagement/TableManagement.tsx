@@ -11,11 +11,15 @@ import ShareCodeSplitter from "../../utils/ShareCodeSplitter";
 import { ISyndicate } from "../../interfaces/ISyndicate";
 import { SyndicateContext } from "../../context/members";
 import Extras from "../Extras/Extras";
+import { IOptions } from "../../interfaces/IOptions";
+import { OptionsContext } from "../../context/options";
 
 const TableManagement = () => {
   const { counters, setCounters, setShareCode } =
     useContext<CountersContextProps>(CountersContext);
   const { members } = useContext<ISyndicate>(SyndicateContext);
+  const { isColorblind, setIsColorblind } =
+    useContext<IOptions>(OptionsContext);
   const resetCounters = () => {
     setCounters((previousCounters) => {
       return previousCounters.map((counter) => {
@@ -93,6 +97,16 @@ const TableManagement = () => {
           </Button>
           <span className="share-info">The most common cheat sheet.</span>
         </div>
+        {/* <div className="options-container">
+          <Button
+            onClick={() => setIsColorblind(!isColorblind)}
+            width="100%"
+            fontSize="1.2rem"
+          >
+            Options
+          </Button>
+          <span className="share-info">Edit theme and others.</span>
+        </div> */}
       </div>
       <Extras></Extras>
     </div>

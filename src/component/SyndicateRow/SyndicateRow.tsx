@@ -7,6 +7,8 @@ import { faCircle as faCircleEmpty } from "@fortawesome/free-regular-svg-icons";
 import { CountersContext } from "../../context/counters";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
 import IncrementOnPosition from "../../utils/IncrementOnPosition";
+import { OptionsContext } from "../../context/options";
+import { IOptions } from "../../interfaces/IOptions";
 
 const SyndicateRow = ({
   rowIndex = 0,
@@ -16,6 +18,7 @@ const SyndicateRow = ({
   const { members } = useContext<ISyndicate>(SyndicateContext);
   const { counters, setCounters, setShareCode, positions } =
     useContext<CountersContextProps>(CountersContext);
+  const { isColorblind } = useContext<IOptions>(OptionsContext);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
     if (found) {
@@ -32,7 +35,6 @@ const SyndicateRow = ({
         .join("")
     );
   };
-
   return (
     <>
       <div className="grid-item first">
@@ -56,7 +58,9 @@ const SyndicateRow = ({
                   rowIndex
                 ]
               : "0"
-          }`}
+          }
+          ${isColorblind ? "colorblind" : ""}
+          `}
           onClick={() => handleCounter(members[positions[index]].name)}
           // backgroundImage diferent based on areaName
           style={{

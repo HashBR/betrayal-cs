@@ -6,8 +6,7 @@ import { ISyndicate } from "../interfaces/ISyndicate";
 import { CountersContextProps } from "../interfaces/CountersContextProps";
 import ShareCodeSplitter from "../utils/ShareCodeSplitter";
 import CodeValidator from "../utils/CodeValidator";
-
-const LOCAL_STORAGE_KEY = "betrayalcs.ms";
+import { LOCAL_STORAGE_KEY_SYNDICATE } from "../utils/consts";
 
 export const CountersContext = createContext<CountersContextProps>({
   counters: [],
@@ -30,7 +29,9 @@ export const CountersProvider = (props: CountersProps) => {
   );
 
   useEffect(() => {
-    const storedCounters = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)!);
+    const storedCounters = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY_SYNDICATE)!
+    );
     console.log(positions);
     if (storedCounters && shareCode === "00000".repeat(members.length)) {
       setCounters(storedCounters);
@@ -56,7 +57,7 @@ export const CountersProvider = (props: CountersProps) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(counters));
+    localStorage.setItem(LOCAL_STORAGE_KEY_SYNDICATE, JSON.stringify(counters));
   }, [counters]);
 
   const value = {
