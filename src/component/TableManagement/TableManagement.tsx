@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CountersContext } from "../../context/counters";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
 import ShareCodeCreator from "../../utils/ShareCodeCreator";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./TableManagement.scss";
@@ -63,11 +63,11 @@ const TableManagement = () => {
       <div className="share-area">
         <ToastContainer
           position="bottom-center"
+          transition={Slide}
           autoClose={500}
           hideProgressBar
           newestOnTop={false}
           closeOnClick
-          rtl={false}
           limit={1}
           closeButton={false}
         />

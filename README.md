@@ -18,7 +18,7 @@ If I see that you are correct right away, I'll fix it. If not, I'd need some val
 
 We all want it. I've added most features I'd like in a cheat sheet, but if you have another one. Throw it to me so I can try to implement it, if applicable.
 
-### Can you make a cheat sheet for <Insert another game here> or <Another PoE mechanic>?
+### Can you make a cheat sheet for [Insert another game here] or [Another PoE mechanic]?
 
 I can at least try. Send me the details and I'll check if I have time for it.
 

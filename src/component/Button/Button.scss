@@ -33,6 +33,7 @@
       no-repeat;
   background-size: contain;
   padding: 10px 20px;
+  z-index: 3;
   &:hover {
     cursor: pointer;
     background: url("https://web.poecdn.com/protected/image/layout/button/button-green-hover-left.png?key=YWYm2nAWV9sQLR4Jlns8cg")
@@ -43,6 +44,7 @@
         top repeat-x;
     background-size: contain;
     color: #a3e89b;
+    z-index: 3;
   }
   &:active {
     background: url("https://web.poecdn.com/protected/image/layout/button/button-green-pressed-left.png?key=0Z9PP2deN4qhSjHSbwi4Fg")
@@ -53,5 +55,6 @@
         top repeat-x;
     background-size: contain;
     color: #35583b;
+    z-index: 3;
   }
 }
