@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CountersContext } from "../../context/counters";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
 import ShareCodeCreator from "../../utils/ShareCodeCreator";
@@ -15,17 +15,31 @@ import { IOptions } from "../../interfaces/IOptions";
 import { OptionsContext } from "../../context/options";
 
 const TableManagement = () => {
-  const { counters, setCounters, setShareCode } =
+  const { counters, setCounters, shareCode, setShareCode } =
     useContext<CountersContextProps>(CountersContext);
   const { members } = useContext<ISyndicate>(SyndicateContext);
   const { isColorblind, setIsColorblind } =
     useContext<IOptions>(OptionsContext);
+
+  useEffect(() => {
+    if (counters.length !== 0) {
+      setShareCode(
+        counters
+          .map((counter) => {
+            return String(counter.count).padStart(5, "0");
+          })
+          .join("")
+      );
+    }
+  }, [counters]);
+
   const resetCounters = () => {
     setCounters((previousCounters) => {
       return previousCounters.map((counter) => {
         return { ...counter, count: 0 };
       });
     });
+
     toast("Cleared!");
   };
 
@@ -46,14 +60,10 @@ const TableManagement = () => {
   };
 
   const handleShare = async () => {
-    const newCode = counters
-      .map((counter) => {
-        return String(counter.count).padStart(5, "0");
-      })
-      .join("");
-    setShareCode(newCode);
     await navigator.clipboard.writeText(
-      `${window.location.origin}/betrayal-cs?code=${ShareCodeCreator(newCode)}`
+      `${window.location.origin}/betrayal-cs?code=${ShareCodeCreator(
+        shareCode
+      )}`
     );
     toast("Copied to Clipboard!");
   };

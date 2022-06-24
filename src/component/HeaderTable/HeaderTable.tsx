@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CountersContext } from "../../context/counters";
 import { SyndicateContext } from "../../context/members";
 import { CountersContextProps } from "../../interfaces/CountersContextProps";
@@ -17,9 +17,20 @@ import { OptionsContext } from "../../context/options";
 
 const HeaderTable = () => {
   const { members } = useContext<ISyndicate>(SyndicateContext);
-  const { counters, setCounters, positions, setPositions } =
+  const { counters, setCounters, setShareCode, positions, setPositions } =
     useContext<CountersContextProps>(CountersContext);
   const { isColorblind } = useContext<IOptions>(OptionsContext);
+  useEffect(() => {
+    if (counters.length !== 0) {
+      setShareCode(
+        counters
+          .map((counter) => {
+            return String(counter.count).padStart(5, "0");
+          })
+          .join("")
+      );
+    }
+  }, [counters]);
   const handleCounter = (member: string) => {
     const found = counters.find((item) => item.field === member);
     if (found) {

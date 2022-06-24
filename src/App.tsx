@@ -3,20 +3,29 @@ import SyndicateRow from "./component/SyndicateRow/SyndicateRow";
 import HeaderTable from "./component/HeaderTable/HeaderTable";
 import TableManagement from "./component/TableManagement/TableManagement";
 import InfoCell from "./component/InfoCell/InfoCell";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import HideColumnMenu from "./component/HideColumnMenu/HideColumnMenu";
 import { CountersContextProps } from "./interfaces/CountersContextProps";
 import { CountersContext } from "./context/counters";
 import { HelpModalContext } from "./context/helpmodal";
 import HelpModal from "./component/HelpModal/HelpModal";
+import ShareCodeCreator from "./utils/ShareCodeCreator";
 
 function App() {
-  const { counters } = useContext<CountersContextProps>(CountersContext);
+  const { counters, shareCode } =
+    useContext<CountersContextProps>(CountersContext);
   // return how many counters are hidden
   const visibleCount = counters.reduce((acc, counter) => {
     return acc + (counter.hidden ? 0 : 1);
   }, 0);
   const { isHelpOpen } = useContext(HelpModalContext);
+  useEffect(() => {
+    window.history.replaceState(
+      null,
+      "Betrayal Cheat Sheet by HashBR",
+      `/betrayal-cs?code=${ShareCodeCreator(shareCode)}`
+    );
+  }, [shareCode]);
 
   return (
     <div className="main-div">
